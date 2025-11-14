@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import TextInput from '../../components/TextInput/TextInput';
 import Button from '../../components/Button/Button';
 import ColorPicker from '../../components/ColorPicker/ColorPicker'; // <-- Import ColorPicker
@@ -29,14 +30,41 @@ const CreateEventForm: React.FC = () => {
   const [description, setDescription] = useState('');
   const [selectedColor, setSelectedColor] = useState(eventColors[0]); // <-- Add state for color
   const [nameError, setNameError] = useState('');
+  const navigate = useNavigate();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!eventName) {
       setNameError('Sorry, this field is required');
     } else {
       setNameError('');
-      console.log({ eventName, date, time, location, description, selectedColor });
+      const eventData = {
+        title: eventName,
+        date: `${date} ${time}`,
+        location,
+        description,
+        color: selectedColor,
+      };
+
+      try {
+        const response = await fetch('http://localhost:3001/events', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(eventData),
+        });
+
+        if (response.ok) {
+          const newEvent = await response.json();
+          console.log('Event created:', newEvent);
+          navigate(`/events/${newEvent.id}`);
+        } else {
+          console.error('Failed to create event');
+        }
+      } catch (error) {
+        console.error('Error creating event:', error);
+      }
     }
   };
 
