@@ -1,0 +1,23 @@
+.appLayout {
+  display: flex;
+  flex-wrap: wrap; /* Allows columns to stack on small screens */
+  gap: 32px;
+  padding: 40px;
+  background-color: #F9FAFB;
+  min-height: 100vh;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.leftColumn,
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Make the form container self-aligning */
+.rightColumn {
+  flex-grow: 1;
+  max-width: 550px;
+}

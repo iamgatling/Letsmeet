@@ -1,0 +1,37 @@
+.wrapper {
+  display: flex;
+  gap: 12px;
+}
+
+.label {
+  position: relative;
+  cursor: pointer;
+}
+
+/* Hide the actual radio button */
+.radioInput {
+  opacity: 0;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+}
+
+.swatch {
+  display: block;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #E5E7EB; /* Default light gray border */
+  transition: border-color 0.2s ease;
+}
+
+/* Style for the selected swatch */
+.radioInput:checked + .swatch {
+  border-color: #7C3AED; /* Purple border when selected */
+  box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 4px #7C3AED; /* Creates a clean outline */
+}
+
+.radioInput:focus-visible + .swatch {
+  border-color: #7C3AED;
+  box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 4px #7C3AED;
+}

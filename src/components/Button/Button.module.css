@@ -1,0 +1,25 @@
+.button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.button:hover {
+  opacity: 0.85;
+}
+
+.primary {
+  background-color: #7C3AED; /* A nice purple */
+  color: white;
+}
+
+.link {
+  background-color: transparent;
+  color: #F43F5E; /* A pink/red for 'Decline' */
+  padding: 0;
+  font-weight: normal;
+}

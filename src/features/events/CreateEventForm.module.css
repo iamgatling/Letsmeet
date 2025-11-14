@@ -1,0 +1,103 @@
+.pageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px;
+  background-color: #F9FAFB;
+  min-height: 100vh;
+}
+
+.form {
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  padding: 32px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: #7C3AED;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1F2937;
+  margin-bottom: 24px;
+}
+
+.row {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+}
+
+.halfWidth {
+  width: 50%;
+}
+
+/* Simple Textarea */
+.textareaWrapper {
+  margin-bottom: 16px;
+}
+
+.label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+.textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #D1D5DB;
+  border-radius: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: #7C3AED;
+  box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.2);
+}
+
+/* Upload Box */
+.uploadBox {
+  border: 2px dashed #D1D5DB;
+  border-radius: 8px;
+  padding: 24px;
+  text-align: center;
+  margin-bottom: 24px;
+  cursor: pointer;
+}
+
+.uploadBox p {
+  margin: 8px 0 0 0;
+  color: #6B7280;
+  font-size: 14px;
+}
+
+.uploadBox span { /* For the icon */
+  font-size: 24px;
+}
+
+.colorPickerSection {
+  margin-bottom: 20px;
+}
+
+.label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 8px; /* Increased margin for the color picker */
+}
